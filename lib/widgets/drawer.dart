@@ -10,7 +10,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color.fromARGB(255, 128, 161, 237),
+        color: Color.fromARGB(255, 177, 194, 233),
         child: ListView(
           padding: EdgeInsets.zero,
           // ignore: prefer_const_literals_to_create_immutables
@@ -21,7 +21,7 @@ class MyDrawer extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 child: UserAccountsDrawerHeader(
                   decoration:
-                      BoxDecoration(color: Color.fromARGB(255, 100, 139, 223)),
+                      BoxDecoration(color: Color.fromARGB(255, 146, 172, 226)),
                   margin: EdgeInsets.zero,
                   accountName: const Text("Vedant"),
                   accountEmail: const Text("vedant.bhawnani@gmail.com"),

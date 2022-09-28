@@ -1,8 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/models/catalog.dart';
 import 'package:flutter_application_1/widgets/drawer.dart';
+
+import '../widgets/item_widget.dart';
 
 // ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget {
@@ -18,18 +20,27 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: BottomNavigationBar(
-        items: const <BottomNavigationBarItem>[
+        backgroundColor: Color.fromARGB(255, 246, 241, 243),
+        // ignore: prefer_const_literals_to_create_immutables
+        items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: 'Home',
+            icon: Icon(
+              Icons.graphic_eq,
+            ),
+            label: '',
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.business),
-            label: 'Business',
+            icon: Image.network(
+              "https://t4.ftcdn.net/jpg/02/92/57/01/360_F_292570125_NWNCG0Cl6s97Ze2kM6wrDf6IBlTr9nHM.jpg",
+              height: 60,
+              width: 60,
+            ),
+            label: '',
+            backgroundColor: Colors.yellow,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.school),
-            label: 'School',
+            icon: Icon(Icons.wallet),
+            label: '',
           ),
         ],
         selectedItemColor: Color.fromARGB(237, 12, 12, 12),
@@ -38,8 +49,13 @@ class _HomePageState extends State<HomePage> {
         title: Text("Binance"),
         centerTitle: true,
       ),
-      body: Center(
-        child: Text("Welcome $name, this is the #$days place to be!"),
+      body: ListView.builder(
+        itemCount: CatalogueModel.items.length,
+        itemBuilder: (context, index) {
+          return ItemWidget(
+            item: CatalogueModel.items[index],
+          );
+        }, 
       ),
       drawer: MyDrawer(),
     );
