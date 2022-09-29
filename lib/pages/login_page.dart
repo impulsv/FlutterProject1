@@ -81,8 +81,10 @@ class _LoginPageState extends State<LoginPage> {
                           validator: (String? value) {
                             if (value!.isEmpty) {
                               return "This field cannot be empty";
-                            } else if (value.length < 6)
+                            } else if (value.length < 6) {
                               return "Psst! Your password is atleast 6 characters. 😉";
+                            }
+                            return null;
                           },
                         ),
                         SizedBox(
