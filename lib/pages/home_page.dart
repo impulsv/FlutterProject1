@@ -49,13 +49,16 @@ class _HomePageState extends State<HomePage> {
         title: Text("Binance"),
         centerTitle: true,
       ),
-      body: ListView.builder(
-        itemCount: CatalogueModel.items.length,
-        itemBuilder: (context, index) {
-          return ItemWidget(
-            item: CatalogueModel.items[index],
-          );
-        }, 
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: ListView.builder(
+          itemCount: CatalogueModel.items.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              item: CatalogueModel.items[index],
+            );
+          }, 
+        ),
       ),
       drawer: MyDrawer(),
     );
