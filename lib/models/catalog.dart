@@ -2,17 +2,16 @@ class CatalogModel {
   static final items = [
     Item(
         id: 1,
-        name: "iPhone 12 Pro",
-        desc: "Apple iPhone 12th generation",
-        price: 999,
+        name: "Bitcoin",
+        desc: "BTC",
+        price: 18972.90,
         color: "#33505a",
-        image:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc"),
+        image: "assets/images/bitcoin1.png"),
     Item(
         id: 2,
         name: "item 2",
         desc: "desc 2",
-        price: 999,
+        price: 363.94,
         color: "#33550a",
         image: "assets/images/makeitrain.png")
   ];

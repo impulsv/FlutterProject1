@@ -6,10 +6,11 @@ import 'package:google_fonts/google_fonts.dart';
 class MyTheme {
   static ThemeData lighttheme(BuildContext context) => ThemeData(
       appBarTheme: AppBarTheme(
-          color: Color.fromARGB(255, 241, 243, 246),
+          color: Color.fromARGB(255, 48, 65, 91),
           elevation: 0.0,
-          iconTheme: IconThemeData(color: Colors.black),
-          titleTextStyle: TextStyle(color: Colors.black, fontSize: 20)
+          iconTheme: IconThemeData(color: Colors.amberAccent),
+          titleTextStyle: TextStyle(
+              color: Colors.amber, fontSize: 20, fontWeight: FontWeight.bold)
           //textTheme: Theme.of(context).textTheme
           ),
       primarySwatch: Colors.red,

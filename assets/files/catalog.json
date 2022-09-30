@@ -2,16 +2,16 @@
     "products": [
         {
         "id": 1,
-        "name": "iPhone 12 Pro",
-        "desc": "Apple iPhone 12th generation",
-        "price": 999,
+        "name": "Bitcoin",
+        "desc": "Btc",
+        "price": 18932.72,
         "color": "#33505a"
         },
         {
             "id": 2,
-        "name": "item2",
-        "desc": "desc 2",
-        "price": 999,
+        "name": "BNB",
+        "desc": "BNB",
+        "price": 267.50,
         "color": "#33505a"
         }
     ]
