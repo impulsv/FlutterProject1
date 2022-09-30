@@ -1,8 +1,18 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 import 'package:flutter/material.dart';
+<<<<<<< HEAD
 import '../utilities/routes.dart';
 import '../widgets/drawer.dart';
 
+=======
+import 'package:flutter/services.dart';
+
+import '../models/catalog.dart';
+import '../utilities/routes.dart';
+import '../widgets/drawer.dart';
+import '../widgets/item_widget.dart';
+
+>>>>>>> 4290590a89d49f654e7909527720277d720bd05a
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -11,11 +21,33 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+<<<<<<< HEAD
+=======
+  final int days = 30;
+
+  final String name = "User";
+
+>>>>>>> 4290590a89d49f654e7909527720277d720bd05a
+  @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    var catalogueJson =
+        await rootBundle.loadString("assets/files/catalog.json");
+  }
+
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     final ButtonStyle style =
         ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     //final dummyList = List.generate(1, (index) => CatalogModel.items[index]);
+=======
+    final dummyList = List.generate(1, (index) => CatalogModel.items[0]);
+>>>>>>> 4290590a89d49f654e7909527720277d720bd05a
     return Scaffold(
       appBar: AppBar(
         title: const Text("Binance"),
@@ -23,6 +55,7 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
+<<<<<<< HEAD
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             // ignore: prefer_const_literals_to_create_immutables
@@ -199,6 +232,41 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
+=======
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ListView.builder(
+              itemCount: dummyList.length,
+              itemBuilder: (context, index) {
+                return ItemWidget(
+                  item: dummyList[index],
+                );
+              },
+            ),
+          ),
+          // Row(
+          //   children: [
+          //     ElevatedButton(
+          //       // ignore: sort_child_properties_last
+          //       child: const Text('Login'),
+          //       style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+          //       onPressed: () {
+          //         // Navigator.pushNamed(const MyRoutes.loginroute);
+          //         Navigator.pushNamed(context, MyRoutes.loginroute);
+          //       },
+          //     ),
+          //     ElevatedButton(
+          //       // ignore: sort_child_properties_last
+          //       child: const Text('Login'),
+          //       style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+          //       onPressed: () {
+          //         // Navigator.pushNamed(const MyRoutes.loginroute);
+          //         Navigator.pushNamed(context, MyRoutes.loginroute);
+          //       },
+          //     ),
+          //   ],
+          // )
+>>>>>>> 4290590a89d49f654e7909527720277d720bd05a
         ],
       ),
       drawer: MyDrawer(),
