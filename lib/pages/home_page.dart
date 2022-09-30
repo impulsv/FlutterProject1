@@ -1,18 +1,10 @@
 // ignore_for_file: prefer_const_constructors, sort_child_properties_last
 import 'package:flutter/material.dart';
-<<<<<<< HEAD
-import '../utilities/routes.dart';
-import '../widgets/drawer.dart';
-
-=======
-import 'package:flutter/services.dart';
-
+import 'package:flutter_application_1/widgets/item_widget.dart';
 import '../models/catalog.dart';
 import '../utilities/routes.dart';
 import '../widgets/drawer.dart';
-import '../widgets/item_widget.dart';
 
->>>>>>> 4290590a89d49f654e7909527720277d720bd05a
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -21,33 +13,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-<<<<<<< HEAD
-=======
-  final int days = 30;
-
-  final String name = "User";
-
->>>>>>> 4290590a89d49f654e7909527720277d720bd05a
-  @override
-  void initState() {
-    super.initState();
-    loadData();
-  }
-
-  loadData() async {
-    var catalogueJson =
-        await rootBundle.loadString("assets/files/catalog.json");
-  }
-
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
+    final dummyList = List.generate(1, (index) => CatalogModel.items[0]);
     final ButtonStyle style =
         ElevatedButton.styleFrom(textStyle: const TextStyle(fontSize: 20));
     //final dummyList = List.generate(1, (index) => CatalogModel.items[index]);
-=======
-    final dummyList = List.generate(1, (index) => CatalogModel.items[0]);
->>>>>>> 4290590a89d49f654e7909527720277d720bd05a
     return Scaffold(
       appBar: AppBar(
         title: const Text("Binance"),
@@ -55,7 +26,6 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-<<<<<<< HEAD
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             // ignore: prefer_const_literals_to_create_immutables
@@ -86,215 +56,85 @@ class _HomePageState extends State<HomePage> {
               ),
             ],
           ),
-          Padding(
-            padding: EdgeInsets.all(10),
-            child: SingleChildScrollView(
-              child: ListView(
-                shrinkWrap: true,
-                children: [
-                  Card(
-                    elevation: 0.0,
-                    color: Colors.lightBlue[50],
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        const ListTile(
-                          leading: Icon(Icons.album),
-                          title: Text('BITCOIN'),
-                          subtitle: Text('BTC'),
-                          trailing: Text(
-                            "\$899.98",
-                            style:
-                                TextStyle(color: Colors.blueGrey, fontSize: 18),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            TextButton(
-                              child: const Text('BUY'),
-                              onPressed: () {/* ... */},
-                            ),
-                            const SizedBox(width: 8),
-                            TextButton(
-                              child: const Text('Sell'),
-                              onPressed: () {/* ... */},
-                            ),
-                            const SizedBox(width: 8),
-                          ],
-                        ),
-                      ],
+          Flexible(
+            child: GridTile(
+              // scrollDirection: Axis.vertical,
+              // shrinkWrap: true,
+              // children: const <Widget>[
+              child: SingleChildScrollView(
+                child: Column(
+                  // ignore: prefer_const_literals_to_create_immutables
+                  children: [
+                    Card(
+                      child: ListTile(
+                        leading: FlutterLogo(size: 72.0),
+                        title: Text('four-line ListTile'),
+                        subtitle: Text(
+                            'A sufficiently long subtitle warrants three lines.'),
+                        trailing: Icon(Icons.more_vert),
+                        isThreeLine: true,
+                      ),
                     ),
+                  ],
+                ),
+              ),
+            ),
+          )
+        ],
+      ),
+      bottomNavigationBar: SizedBox(
+        height: 100,
+        width: 100,
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.only(
+                topRight: Radius.circular(30),
+                topLeft: Radius.circular(30),
+                bottomLeft: Radius.circular(50),
+                bottomRight: Radius.circular(50)),
+            // ignore: prefer_const_literals_to_create_immutables
+            boxShadow: [
+              BoxShadow(color: Colors.black38, spreadRadius: 0, blurRadius: 10),
+            ],
+          ),
+          child: ClipRRect(
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(30.0),
+              topRight: Radius.circular(30.0),
+            ),
+            child: Padding(
+              padding: EdgeInsets.zero,
+              child: BottomNavigationBar(
+                elevation: 20,
+                backgroundColor: Color.fromARGB(255, 246, 241, 243),
+                items: <BottomNavigationBarItem>[
+                  BottomNavigationBarItem(
+                    icon: Icon(
+                      Icons.graphic_eq,
+                    ),
+                    label: '',
                   ),
-                  Card(
-                    elevation: 0.0,
-                    color: Colors.lightBlue[50],
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        const ListTile(
-                          leading: Icon(Icons.album),
-                          title: Text('BNB'),
-                          subtitle: Text('BNB'),
-                          trailing: Text(
-                            "\$233.98",
-                            style:
-                                TextStyle(color: Colors.blueGrey, fontSize: 18),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            TextButton(
-                              child: const Text('BUY'),
-                              onPressed: () {/* ... */},
-                            ),
-                            const SizedBox(width: 8),
-                            TextButton(
-                              child: const Text('Sell'),
-                              onPressed: () {/* ... */},
-                            ),
-                            const SizedBox(width: 8),
-                          ],
-                        ),
-                      ],
+                  BottomNavigationBarItem(
+                    icon: Image.network(
+                      "https://t4.ftcdn.net/jpg/02/92/57/01/360_F_292570125_NWNCG0Cl6s97Ze2kM6wrDf6IBlTr9nHM.jpg",
+                      height: 60,
+                      width: 60,
                     ),
+                    label: '',
+                    backgroundColor: Colors.yellow,
                   ),
-                  Card(
-                    elevation: 0.0,
-                    color: Colors.lightBlue[50],
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        const ListTile(
-                          leading: Icon(Icons.album),
-                          title: Text('Etherium'),
-                          subtitle: Text('ETH'),
-                          trailing: Text(
-                            "\$1345.89",
-                            style:
-                                TextStyle(color: Colors.blueGrey, fontSize: 18),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            TextButton(
-                              child: const Text('BUY'),
-                              onPressed: () {/* ... */},
-                            ),
-                            const SizedBox(width: 8),
-                            TextButton(
-                              child: const Text('Sell'),
-                              onPressed: () {/* ... */},
-                            ),
-                            const SizedBox(width: 8),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                  Card(
-                    elevation: 0.0,
-                    color: Colors.lightBlue[50],
-                    child: Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: <Widget>[
-                        const ListTile(
-                          leading: Icon(Icons.album),
-                          title: Text('RIPPLE'),
-                          subtitle: Text('XRP'),
-                          trailing: Text(
-                            "\$0.404200",
-                            style:
-                                TextStyle(color: Colors.blueGrey, fontSize: 18),
-                          ),
-                        ),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.end,
-                          children: <Widget>[
-                            TextButton(
-                              child: const Text('BUY'),
-                              onPressed: () {/* ... */},
-                            ),
-                            const SizedBox(width: 8),
-                            TextButton(
-                              child: const Text('Sell'),
-                              onPressed: () {/* ... */},
-                            ),
-                            const SizedBox(width: 8),
-                          ],
-                        ),
-                      ],
-                    ),
+                  BottomNavigationBarItem(
+                    icon: const Icon(Icons.wallet),
+                    label: '',
                   ),
                 ],
+                selectedItemColor: Color.fromARGB(237, 12, 12, 12),
               ),
             ),
           ),
-=======
-          Padding(
-            padding: const EdgeInsets.all(16.0),
-            child: ListView.builder(
-              itemCount: dummyList.length,
-              itemBuilder: (context, index) {
-                return ItemWidget(
-                  item: dummyList[index],
-                );
-              },
-            ),
-          ),
-          // Row(
-          //   children: [
-          //     ElevatedButton(
-          //       // ignore: sort_child_properties_last
-          //       child: const Text('Login'),
-          //       style: TextButton.styleFrom(minimumSize: Size(150, 40)),
-          //       onPressed: () {
-          //         // Navigator.pushNamed(const MyRoutes.loginroute);
-          //         Navigator.pushNamed(context, MyRoutes.loginroute);
-          //       },
-          //     ),
-          //     ElevatedButton(
-          //       // ignore: sort_child_properties_last
-          //       child: const Text('Login'),
-          //       style: TextButton.styleFrom(minimumSize: Size(150, 40)),
-          //       onPressed: () {
-          //         // Navigator.pushNamed(const MyRoutes.loginroute);
-          //         Navigator.pushNamed(context, MyRoutes.loginroute);
-          //       },
-          //     ),
-          //   ],
-          // )
->>>>>>> 4290590a89d49f654e7909527720277d720bd05a
-        ],
+        ),
       ),
       drawer: MyDrawer(),
-      bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Color.fromARGB(255, 246, 241, 243),
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.graphic_eq,
-            ),
-            label: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Image.network(
-              "https://t4.ftcdn.net/jpg/02/92/57/01/360_F_292570125_NWNCG0Cl6s97Ze2kM6wrDf6IBlTr9nHM.jpg",
-              height: 60,
-              width: 60,
-            ),
-            label: '',
-            backgroundColor: Colors.yellow,
-          ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.wallet),
-            label: '',
-          ),
-        ],
-        selectedItemColor: Color.fromARGB(237, 12, 12, 12),
-      ),
     );
   }
 }
