@@ -11,13 +11,15 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // ignore: prefer_const_constructors
-    return ListTile(
-      leading: Image.network(item.image),
-      title: Text(item.name),
-      subtitle: Text(item.desc),
-      trailing: Text(
-        "\$${item.price}",
-        style: TextStyle(color: Colors.blueGrey),
+    return Card(
+      child: ListTile(
+        leading: Image.network(item.image),
+        title: Text(item.name),
+        subtitle: Text(item.desc),
+        trailing: Text(
+          "\$${item.price}",
+          style: const TextStyle(color: Colors.blueGrey),
+        ),
       ),
     );
   }

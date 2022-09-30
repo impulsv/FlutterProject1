@@ -1,18 +1,25 @@
-class CatalogueModel {
+class CatalogModel {
   static final items = [
     Item(
-        id: "001",
-        name: "product1",
-        desc: "product1 description",
-        price: 49999,
+        id: 1,
+        name: "iPhone 12 Pro",
+        desc: "Apple iPhone 12th generation",
+        price: 999,
         color: "#33505a",
         image:
-            "https://cdn.pixabay.com/photo/2016/11/04/15/27/halloween-1798080_960_720.jpg")
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRISJ6msIu4AU9_M9ZnJVQVFmfuhfyJjEtbUm3ZK11_8IV9TV25-1uM5wHjiFNwKy99w0mR5Hk&usqp=CAc"),
+    Item(
+        id: 2,
+        name: "item 2",
+        desc: "desc 2",
+        price: 999,
+        color: "#33550a",
+        image: "assets/images/makeitrain.png")
   ];
 }
 
 class Item {
-  final String id;
+  final int id;
   final String name;
   final String desc;
   final num price;
@@ -26,15 +33,4 @@ class Item {
       required this.price,
       required this.color,
       required this.image});
-
-  final products = [
-    Item(
-        id: "001",
-        name: "product1",
-        desc: "product1 description",
-        price: 49999,
-        color: "#33505a",
-        image:
-            "https://cdn.pixabay.com/photo/2016/11/04/15/27/halloween-1798080_960_720.jpg")
-  ];
 }

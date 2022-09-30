@@ -1,27 +1,84 @@
 // ignore_for_file: prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/models/catalog.dart';
-import 'package:flutter_application_1/widgets/drawer.dart';
+import 'package:flutter/services.dart';
 
+import '../models/catalog.dart';
+import '../utilities/routes.dart';
+import '../widgets/drawer.dart';
 import '../widgets/item_widget.dart';
 
-// ignore: use_key_in_widget_constructors
 class HomePage extends StatefulWidget {
+  const HomePage({super.key});
+
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  final int days = 1;
+  final int days = 30;
+
   final String name = "User";
 
   @override
+  void initState() {
+    super.initState();
+    loadData();
+  }
+
+  loadData() async {
+    var catalogueJson =
+        await rootBundle.loadString("assets/files/catalog.json");
+  }
+
+  @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(1, (index) => CatalogModel.items[0]);
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Binance"),
+        centerTitle: true,
+      ),
+      body: Column(
+        children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: ListView.builder(
+              itemCount: dummyList.length,
+              itemBuilder: (context, index) {
+                return ItemWidget(
+                  item: dummyList[index],
+                );
+              },
+            ),
+          ),
+          // Row(
+          //   children: [
+          //     ElevatedButton(
+          //       // ignore: sort_child_properties_last
+          //       child: const Text('Login'),
+          //       style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+          //       onPressed: () {
+          //         // Navigator.pushNamed(const MyRoutes.loginroute);
+          //         Navigator.pushNamed(context, MyRoutes.loginroute);
+          //       },
+          //     ),
+          //     ElevatedButton(
+          //       // ignore: sort_child_properties_last
+          //       child: const Text('Login'),
+          //       style: TextButton.styleFrom(minimumSize: Size(150, 40)),
+          //       onPressed: () {
+          //         // Navigator.pushNamed(const MyRoutes.loginroute);
+          //         Navigator.pushNamed(context, MyRoutes.loginroute);
+          //       },
+          //     ),
+          //   ],
+          // )
+        ],
+      ),
+      drawer: MyDrawer(),
       bottomNavigationBar: BottomNavigationBar(
         backgroundColor: Color.fromARGB(255, 246, 241, 243),
-        // ignore: prefer_const_literals_to_create_immutables
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
@@ -39,28 +96,12 @@ class _HomePageState extends State<HomePage> {
             backgroundColor: Colors.yellow,
           ),
           BottomNavigationBarItem(
-            icon: Icon(Icons.wallet),
+            icon: const Icon(Icons.wallet),
             label: '',
           ),
         ],
         selectedItemColor: Color.fromARGB(237, 12, 12, 12),
       ),
-      appBar: AppBar(
-        title: Text("Binance"),
-        centerTitle: true,
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: ListView.builder(
-          itemCount: CatalogueModel.items.length,
-          itemBuilder: (context, index) {
-            return ItemWidget(
-              item: CatalogueModel.items[index],
-            );
-          }, 
-        ),
-      ),
-      drawer: MyDrawer(),
     );
   }
 }
