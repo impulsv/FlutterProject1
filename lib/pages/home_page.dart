@@ -52,7 +52,7 @@ class HomePage extends StatelessWidget {
                           borderRadius: BorderRadius.circular(10))),
                   child: Text('Login'),
                   onPressed: () {
-                    Navigator.pushNamed(context, MyRoutes.constructionroute);
+                    Navigator.pushNamed(context, MyRoutes.loginroute);
                   },
                 ),
                 Padding(padding: EdgeInsets.only(left: 20)),
@@ -65,7 +65,7 @@ class HomePage extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(10))),
                   onPressed: () {
-                    Navigator.pushNamed(context, MyRoutes.loginroute);
+                    Navigator.pushNamed(context, MyRoutes.constructionroute);
                   },
                 ),
               ],
