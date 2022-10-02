@@ -10,7 +10,7 @@ class MyDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color: Color.fromARGB(255, 177, 194, 233),
+        color: Color.fromARGB(255, 6, 111, 48),
         child: ListView(
           padding: EdgeInsets.zero,
           // ignore: prefer_const_literals_to_create_immutables
@@ -21,10 +21,16 @@ class MyDrawer extends StatelessWidget {
                 padding: EdgeInsets.zero,
                 child: UserAccountsDrawerHeader(
                   decoration:
-                      BoxDecoration(color: Color.fromARGB(255, 146, 172, 226)),
+                      BoxDecoration(color: Color.fromARGB(255, 16, 91, 49)),
                   margin: EdgeInsets.zero,
-                  accountName: const Text("Vedant"),
-                  accountEmail: const Text("vedant.bhawnani@gmail.com"),
+                  accountName: const Text(
+                    "Vedant",
+                    style: TextStyle(fontSize: 20, color: Colors.white),
+                  ),
+                  accountEmail: const Text(
+                    "vedant.bhawnani@gmail.com",
+                    style: TextStyle(color: Colors.white),
+                  ),
                   currentAccountPicture: Image.network(
                       'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/a89c3e38-b6f3-48a0-9f9e-df9a0129fb93/daghh5x-4a77b3ec-fd4f-4d17-9f84-5963a8cb5c03.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2E4OWMzZTM4LWI2ZjMtNDhhMC05ZjllLWRmOWEwMTI5ZmI5M1wvZGFnaGg1eC00YTc3YjNlYy1mZDRmLTRkMTctOWY4NC01OTYzYThjYjVjMDMucG5nIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.dWTFMrwnbAbj5TtUp9U_vQsohW7MnkRPymzR5wZQoV8'),
                 )),
